@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. /etc/jelastic/environment
 SED=$(which sed);
 
 #
