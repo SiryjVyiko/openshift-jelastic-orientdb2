@@ -6,3 +6,5 @@ for dir in logs tmp pid cache env; do
 	mkdir -p $dir
 done
 
+EXT_IP=$(ip a show venet0:0 | grep venet0:0 | awk '{print $2}' | sed 's/\/[0-9]*//g')
+[ -n "$EXT_IP" ] && sed -i "s/\"$EXT_IP$/\"$EXT_IP\"/" /etc/jelastic/environment
